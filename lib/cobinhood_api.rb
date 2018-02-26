@@ -1,6 +1,3 @@
-require "cobinhood_api/version"
-
-
 require 'net/http'
 require 'json'
 require 'logger'
@@ -88,15 +85,11 @@ class CobinhoodApi
             @http = nil
         end
 
-        puts console_log
-
         @loggers = []
         if console_log
-            puts "create console log"
             @loggers.push(Logger.new(STDOUT))
         end
         unless logfile.nil?
-            puts "create file log"
             @loggers.push(Logger.new(logfile))
         end
     end
